@@ -132,6 +132,36 @@
                 linear-gradient(to top, rgba(20, 14, 12, 0.94) 0%, transparent 40%);
         }
 
+        /* Mobile & tablet: the hero content stacks tall, so pin a portrait crop to one screen height
+           and fade it into the solid background instead of stretching the landscape image */
+        @keyframes kenBurnsMobile {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.06); }
+        }
+
+        @media (max-width: 1023px) {
+            #home {
+                background-color: #140e0c;
+            }
+            .hero-kenburns-img,
+            .hero-gradient-overlay {
+                bottom: auto;
+                height: 100vh;
+                height: 100svh;
+            }
+            .hero-kenburns-img {
+                background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&crop=faces&w=1080&h=1920&q=80');
+                background-position: center top;
+                transform-origin: center top;
+                -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 92%);
+                mask-image: linear-gradient(to bottom, #000 65%, transparent 92%);
+                animation: kenBurnsMobile 18s ease-in-out infinite alternate;
+            }
+            .hero-gradient-overlay {
+                background: linear-gradient(to bottom, rgba(20, 14, 12, 0.55) 0%, rgba(20, 14, 12, 0.72) 40%, rgba(20, 14, 12, 0.9) 75%, #140e0c 100%);
+            }
+        }
+
         /* Floating gentle pulse animation for decorative images */
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px); }
@@ -303,7 +333,7 @@
                 <span class="inline-flex items-center gap-1.5 text-[12px] font-medium">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                     <span class="text-emerald-300">Open</span>
-                    <span class="text-champagne-300">· Closes 8:30 pm</span>
+                    <span class="hidden sm:inline text-champagne-300">· Closes 8:30 pm</span>
                 </span>
                 <a href="tel:91XXXXXXXXXX" class="hidden sm:inline-flex items-center gap-1.5 text-[12px] text-white hover:text-rosegold-light transition font-medium">
                     <i class="fa-solid fa-phone text-rosegold-light text-[10px]"></i>
@@ -902,7 +932,7 @@
 
                     <!-- Fixed Keyless Interactive Google Map with Interactive Overlay Badge & Direct Button -->
                     <div class="bg-white p-3 rounded-3xl shadow-luxury border border-champagne-200 overflow-hidden">
-                        <div class="rounded-2xl overflow-hidden h-72 sm:h-80 w-full relative group">
+                        <div class="rounded-2xl overflow-hidden h-80 w-full relative group">
                             <iframe 
                                 title="Makeup World MG Market Doddapet Ranebennur Map"
                                 src="https://maps.google.com/maps?q=Makeup+World+MG+Market+Doddapet+Ranebennur+Karnataka+581115&t=&z=16&ie=UTF8&iwloc=&output=embed"
@@ -913,14 +943,14 @@
                             </iframe>
 
                             <!-- Interactive Overlay Badge & Instant Turn-by-Turn Navigation Button -->
-                            <div class="absolute bottom-3 left-3 right-3 sm:right-auto bg-espresso/90 backdrop-blur-md text-white p-3.5 rounded-2xl border border-white/15 shadow-xl flex items-center justify-between gap-4 max-w-md">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-9 h-9 rounded-xl gold-btn-gradient flex items-center justify-center text-white shrink-0">
+                            <div class="absolute bottom-3 left-3 right-3 sm:right-auto bg-espresso/90 backdrop-blur-md text-white p-2.5 sm:p-3.5 rounded-2xl border border-white/15 shadow-xl flex items-center justify-between gap-3 sm:gap-4 max-w-md">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                                    <div class="hidden sm:flex w-9 h-9 rounded-xl gold-btn-gradient items-center justify-center text-white shrink-0">
                                         <i class="fa-solid fa-location-dot text-sm"></i>
                                     </div>
-                                    <div>
+                                    <div class="min-w-0">
                                         <span class="typo-small-label text-amber-300 block">Makeup World • 5.0 ★</span>
-                                        <p class="text-[12.5px] font-medium text-champagne-100 leading-tight mt-0.5">MG Market, above Naveen footwear, Doddapet</p>
+                                        <p class="hidden sm:block text-[12.5px] font-medium text-champagne-100 leading-tight mt-0.5">MG Market, above Naveen footwear, Doddapet</p>
                                     </div>
                                 </div>
                                 <a href="https://www.google.com/maps/search/?api=1&query=Makeup+World+MG+Market+above+Naveen+footwear+Doddapet+Ranebennur+Karnataka+581115" target="_blank" rel="noopener noreferrer" class="typo-small-label gold-btn-gradient text-white px-3.5 py-2 rounded-xl shrink-0 hover:scale-105 transition flex items-center gap-1.5 shadow-sm">
