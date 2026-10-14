@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup World | Luxury Bridal Styling & Advanced Hair Salon in Ranebennuru</title>
+    <meta name="description" content="Makeup World - 5.0 ★ (314 Google reviews) Beauty parlour in Ranebennuru, Karnataka. Professional beauty salon offering expert bridal styling and advanced hair treatments.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond (Headings) & Manrope (Body, Nav, Buttons, Labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        champagne: {
+                            50: '#FDFBF9',
+                            100: '#F9F3EC',
+                            200: '#F1E3D3',
+                            300: '#E5CCB2',
+                            400: '#D4AC87',
+                            500: '#C59268',
+                        },
+                        rosegold: {
+                            light: '#E8C5B8',
+                            DEFAULT: '#C88D77',
+                            dark: '#A36A55',
+                        },
+                        espresso: {
+                            DEFAULT: '#1A1311',
+                            light: '#2C211E',
+                            muted: '#5A4A44'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'luxury': '0 14px 35px -12px rgba(26, 19, 17, 0.08)',
+                        'glow': '0 8px 25px -4px rgba(200, 141, 119, 0.45)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #FDFBF9;
+            color: #1A1311;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Exact Typography Classes */
+        .typo-hero-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(44px, 6.2vw, 76px);
+            line-height: 1.05;
+        }
+
+        .typo-section-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 4.4vw, 50px);
+            line-height: 1.12;
+        }
+
+        .typo-body {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(16px, 1.15vw, 18px);
+            line-height: 1.68;
+        }
+
+        .typo-nav {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .typo-booking-btn {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14.5px;
+            font-weight: 600;
+        }
+
+        .typo-small-label {
+            font-family: 'Manrope', sans-serif;
+            font-size: 11.5px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* Hero Continuous Ken Burns Slow Zoom & Pan Animation */
+        @keyframes kenBurns {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+            50% {
+                transform: scale(1.1) translate(-1.5%, -1%);
+            }
+            100% {
+                transform: scale(1.04) translate(1%, -0.5%);
+            }
+        }
+
+        .hero-kenburns-img {
+            background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=85');
+            background-size: cover;
+            background-position: center 25%;
+            animation: kenBurns 24s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        .hero-gradient-overlay {
+            background: 
+                linear-gradient(to right, rgba(20, 14, 12, 0.92) 0%, rgba(20, 14, 12, 0.76) 55%, rgba(20, 14, 12, 0.48) 100%),
+                linear-gradient(to top, rgba(20, 14, 12, 0.94) 0%, transparent 40%);
+        }
+
+        /* Floating gentle pulse animation for decorative images */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .animate-float-slow {
+            animation: floatSlow 5.5s ease-in-out infinite;
+        }
+
+        /* Scroll-Triggered Reveal Animations */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(28px) scale(0.98);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-item.revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Luxury Image Card Multi-Layered Hover & Diagonal Shimmer Sweep */
+        .luxury-img-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .luxury-img-wrap img {
+            transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+            will-change: transform;
+        }
+
+        .luxury-img-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -130%;
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(
+                115deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.28) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-22deg);
+            transition: left 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .luxury-card:hover .luxury-img-wrap::after,
+        .luxury-img-wrap:hover::after {
+            left: 140%;
+        }
+
+        .luxury-card:hover .luxury-img-wrap img,
+        .luxury-img-wrap:hover img {
+            transform: scale(1.08);
+        }
+
+        .luxury-card {
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.45s ease;
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -14px rgba(200, 141, 119, 0.3);
+            border-color: rgba(200, 141, 119, 0.55);
+        }
+
+        .luxury-card:hover .floating-badge {
+            transform: translateY(-2px) scale(1.03);
+            background-color: rgba(200, 141, 119, 0.95);
+            color: #ffffff;
+        }
+
+        .floating-badge {
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Tab Filter Smooth Transition Animation */
+        @keyframes cardEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(18px) scale(0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .tab-animate-in {
+            animation: cardEntrance 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F5E1CE 0%, #D4AC87 50%, #E8C5B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-btn-gradient {
+            background: linear-gradient(135deg, #C88D77 0%, #B3745E 50%, #9A5E49 100%);
+        }
+        
+        .gold-btn-gradient:hover {
+            background: linear-gradient(135deg, #D49A84 0%, #C08069 50%, #A96B55 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(241, 227, 211, 0.2);
+        }
+
+        .nav-glass {
+            background: rgba(26, 19, 17, 0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 172, 135, 0.16);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F3EC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C88D77;
+            border-radius: 4px;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-rosegold selection:text-white">
+
+    <!-- Top Announcement / Quick Info Bar -->
+    <div class="bg-espresso text-champagne-200 py-2 px-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-nowrap justify-between items-center gap-3 overflow-x-auto no-scrollbar whitespace-nowrap">
+            <div class="flex items-center gap-3.5 shrink-0">
+                <span class="typo-small-label inline-flex items-center gap-1.5 text-amber-300">
+                    <i class="fa-solid fa-star text-[10px]"></i>
+                    <span>5.0 ★ / 314 Google reviews</span>
+                </span>
+                <span class="hidden md:inline text-white/25">|</span>
+                <span class="hidden md:inline-flex items-center gap-1.5 text-[12px] font-medium text-champagne-100">
+                    <i class="fa-solid fa-location-dot text-rosegold-light"></i>
+                    Mg market, above Naveen footwear, Doddapet, Ranebennur
+                </span>
+            </div>
+            <div class="flex items-center gap-4 ml-auto shrink-0">
+                <span class="inline-flex items-center gap-1.5 text-[12px] font-medium">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="text-emerald-300">Open</span>
+                    <span class="text-champagne-300">· Closes 8:30 pm</span>
+                </span>
+                <a href="tel:91XXXXXXXXXX" class="hidden sm:inline-flex items-center gap-1.5 text-[12px] text-white hover:text-rosegold-light transition font-medium">
+                    <i class="fa-solid fa-phone text-rosegold-light text-[10px]"></i>
+                    +91 XXXXXXXXXX
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Bar (Strictly Single Line on Desktop) -->
+    <header id="navbar" class="sticky top-0 z-50 nav-glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-nowrap justify-between items-center h-16 sm:h-20 gap-4 whitespace-nowrap">
+                
+                <!-- Left: Clean Single-Line Brand Logo -->
+                <a href="#home" class="flex items-center gap-2.5 group shrink-0">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full gold-btn-gradient flex items-center justify-center text-white shadow-glow group-hover:scale-105 transition shrink-0">
+                        <span class="font-heading font-bold text-lg tracking-wider">MW</span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <span class="font-heading text-2xl sm:text-[26px] font-semibold tracking-tight text-white">
+                            Makeup <span class="text-rosegold-light italic">World</span>
+                        </span>
+                        <span class="hidden xl:inline-block typo-small-label bg-white/10 text-champagne-200 px-2.5 py-0.5 rounded-full border border-white/10">
+                            Ranebennuru
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Center: Single-Line Desktop Navigation Links (Manrope 13-15px) -->
+                <nav class="hidden lg:flex items-center gap-6 xl:gap-8 typo-nav text-champagne-100 whitespace-nowrap shrink-0">
+                    <a href="#home" class="hover:text-rosegold-light transition py-1">Home</a>
+                    <a href="#about" class="hover:text-rosegold-light transition py-1">About</a>
+                    <a href="#services" class="hover:text-rosegold-light transition py-1">Services</a>
+                    <a href="#gallery" class="hover:text-rosegold-light transition py-1">Gallery</a>
+                    <a href="#reviews" class="hover:text-rosegold-light transition py-1 inline-flex items-center gap-1.5">
+                        <span>Reviews</span>
+                        <span class="typo-small-label bg-amber-400/20 text-amber-300 border border-amber-400/30 px-2 py-0.5 rounded-full">5.0 ★</span>
+                    </a>
+                    <a href="#location" class="hover:text-rosegold-light transition py-1">Directions</a>
+                </nav>
+
+                <!-- Right: Single-Line Call Link & Book Now CTA (Manrope SemiBold 14-15px) -->
+                <div class="hidden lg:flex items-center gap-3 shrink-0 whitespace-nowrap">
+                    <a href="tel:91XXXXXXXXXX" class="typo-nav px-4 py-2 rounded-full border border-champagne-300/35 text-champagne-100 hover:bg-white/10 transition inline-flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-phone text-rosegold-light text-xs"></i>
+                        <span>+91 XXXXXXXXXX</span>
+                    </a>
+                    <button onclick="openBookingModal('General Bridal / Salon Inquiry')" class="typo-booking-btn gold-btn-gradient text-white px-5 py-2.5 rounded-full shadow-glow hover:scale-[1.02] active:scale-95 transition inline-flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Book Now</span>
+                    </button>
+                </div>
+
+                <!-- Mobile & Tablet (< lg) Hamburger Button -->
+                <button id="mobileMenuBtn" aria-label="Toggle Menu" class="lg:hidden text-champagne-100 hover:text-white p-2.5 rounded-xl border border-white/15 shrink-0 focus:outline-none">
+                    <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-espresso/95 backdrop-blur-xl border-t border-white/10 px-4 pt-3 pb-5 space-y-1.5 shadow-2xl">
+            <a href="#home" class="mobile-link typo-nav block py-2.5 px-3 rounded-xl text-champagne-100 hover:bg-white/5 hover:text-rosegold-light">Home</a>
+            <a href="#about" class="mobile-link typo-nav block py-2.5 px-3 rounded-xl text-champagne-100 hover:bg-white/5 hover:text-rosegold-light">About Salon</a>
+            <a href="#services" class="mobile-link typo-nav block py-2.5 px-3 rounded-xl text-champagne-100 hover:bg-white/5 hover:text-rosegold-light">Services</a>
+            <a href="#gallery" class="mobile-link typo-nav block py-2.5 px-3 rounded-xl text-champagne-100 hover:bg-white/5 hover:text-rosegold-light">Gallery</a>
+            <a href="#reviews" class="mobile-link typo-nav flex items-center justify-between py-2.5 px-3 rounded-xl text-champagne-100 hover:bg-white/5 hover:text-rosegold-light">
+                <span>Reviews</span>
+                <span class="typo-small-label bg-amber-400/20 text-amber-300 border border-amber-400/30 px-2 py-0.5 rounded-full">5.0 ★ (314)</span>
+            </a>
+            <a href="#location" class="mobile-link typo-nav block py-2.5 px-3 rounded-xl text-champagne-100 hover:bg-white/5 hover:text-rosegold-light">Directions</a>
+            
+            <div class="pt-3 mt-2 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <a href="tel:91XXXXXXXXXX" class="typo-nav flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-champagne-300/35 text-champagne-100 whitespace-nowrap">
+                    <i class="fa-solid fa-phone text-rosegold-light text-xs"></i>
+                    <span>+91 XXXXXXXXXX</span>
+                </a>
+                <button onclick="openBookingModal('Appointment Booking')" class="typo-booking-btn gold-btn-gradient text-white py-2.5 px-4 rounded-xl shadow-glow flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Book Now</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full-Screen Hero Section with Animated Ken Burns Background -->
+    <section id="home" class="relative min-h-[86vh] flex items-center py-14 sm:py-20 lg:py-24 overflow-hidden">
+        <!-- Animated Ken Burns Background Layer -->
+        <div class="absolute inset-0 hero-kenburns-img z-0"></div>
+        <!-- Rich Gradient Overlay Layer -->
+        <div class="absolute inset-0 hero-gradient-overlay z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                
+                <!-- Left Column: Primary Salon Information & CTAs -->
+                <div class="lg:col-span-8 space-y-6 text-left reveal-item">
+                    
+                    <!-- Top Rating & Category Pill Badge -->
+                    <div class="inline-flex flex-wrap items-center gap-2.5 px-4 py-1.5 rounded-full glass-card text-champagne-100">
+                        <span class="typo-small-label flex items-center gap-1 bg-amber-400/20 border border-amber-300/40 text-amber-300 px-2.5 py-0.5 rounded-full font-semibold">
+                            5.0 ★
+                        </span>
+                        <span class="typo-small-label text-white">314 Google reviews</span>
+                        <span class="hidden sm:inline text-champagne-300">•</span>
+                        <span class="typo-small-label text-champagne-200 w-full sm:w-auto">Beauty parlour in Ranebennuru, Karnataka</span>
+                    </div>
+
+                    <!-- Salon Title & Subtitle (Cormorant Garamond 64-80px on Desktop) -->
+                    <div class="space-y-3">
+                        <p class="typo-small-label text-rosegold-light">
+                            Bridal Styling & Advanced Hair Studio
+                        </p>
+                        <h1 class="typo-hero-heading font-semibold text-white tracking-tight">
+                            Makeup World <br class="hidden sm:inline" />
+                            <span class="gold-gradient-text italic font-normal">Bridal & Hair Artistry</span>
+                        </h1>
+                    </div>
+
+                    <!-- Official Business Description (Manrope 16-18px) -->
+                    <p class="typo-body text-champagne-100/90 max-w-2xl font-normal">
+                        Professional beauty salon offering expert bridal styling and advanced hair treatments in the heart of Ranebennuru.
+                    </p>
+
+                    <!-- Compact Glass Info Cards Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-1 max-w-3xl">
+                        <!-- Address Card -->
+                        <a href="#location" class="glass-card p-4 rounded-2xl hover:bg-white/15 transition flex items-start gap-3 group">
+                            <div class="w-9 h-9 rounded-xl bg-rosegold/25 border border-rosegold/40 flex items-center justify-center text-rosegold-light shrink-0 mt-0.5 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-location-dot text-xs"></i>
+                            </div>
+                            <div>
+                                <span class="typo-small-label text-champagne-300 block">Address</span>
+                                <span class="text-white text-[13.5px] font-semibold block mt-0.5">Mg market, above Naveen footwear</span>
+                                <span class="text-champagne-200 text-[12px] block">Doddapet, Ranebennur, Karnataka 581115</span>
+                            </div>
+                        </a>
+
+                        <!-- Business Hours Card -->
+                        <div class="glass-card p-4 rounded-2xl flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300 shrink-0 mt-0.5">
+                                <i class="fa-regular fa-clock text-xs"></i>
+                            </div>
+                            <div>
+                                <span class="typo-small-label text-champagne-300 block">Hours</span>
+                                <span class="text-emerald-300 text-[13.5px] font-semibold flex items-center gap-1.5 mt-0.5">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                    Open · Closes 8:30 pm
+                                </span>
+                                <span class="text-champagne-200 text-[12px] block mt-0.5">Monday – Sunday</span>
+                            </div>
+                        </div>
+
+                        <!-- Sample Phone Card -->
+                        <a href="tel:91XXXXXXXXXX" class="glass-card p-4 rounded-2xl hover:bg-white/15 transition flex items-start gap-3 group">
+                            <div class="w-9 h-9 rounded-xl bg-amber-400/20 border border-amber-300/40 flex items-center justify-center text-amber-300 shrink-0 mt-0.5 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-phone-volume text-xs"></i>
+                            </div>
+                            <div>
+                                <span class="typo-small-label text-champagne-300 block">Phone</span>
+                                <span class="text-white font-semibold text-[14px] block mt-0.5">+91 XXXXXXXXXX</span>
+                                <span class="text-champagne-200 text-[12px] block">Tap to call salon</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Primary Action CTA Buttons (Booking Button: Manrope SemiBold 14-15px) -->
+                    <div class="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5">
+                        <button onclick="openBookingModal('Bridal & Hair Appointment')" class="typo-booking-btn gold-btn-gradient text-white px-7 py-3.5 rounded-full shadow-glow hover:scale-[1.02] active:scale-95 transition flex items-center justify-center gap-2.5">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span>Book an Appointment</span>
+                        </button>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Makeup+World+MG+Market+above+Naveen+footwear+Doddapet+Ranebennur+Karnataka+581115" target="_blank" rel="noopener noreferrer" class="typo-booking-btn glass-card text-white hover:bg-white/20 px-6 py-3.5 rounded-full transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-diamond-turn-right text-rosegold-light"></i>
+                            <span>Get Directions</span>
+                        </a>
+
+                        <a href="tel:91XXXXXXXXXX" class="typo-booking-btn glass-card text-champagne-100 hover:bg-white/20 px-6 py-3.5 rounded-full transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-emerald-300"></i>
+                            <span>Call +91 XXXXXXXXXX</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Animated Salon Highlights Card -->
+                <div class="lg:col-span-4 reveal-item" style="transition-delay: 140ms;">
+                    <div class="glass-card rounded-3xl p-6 text-white relative overflow-hidden shadow-2xl border border-champagne-300/25 animate-float-slow">
+                        <div class="flex items-center gap-4 pb-4 border-b border-white/15">
+                            <div class="luxury-img-wrap w-16 h-16 rounded-2xl border border-rosegold-light shrink-0">
+                                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=300&q=80" alt="Bridal Styling" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h2 class="font-heading font-semibold text-2xl text-white leading-tight">Makeup World</h2>
+                                <p class="typo-small-label text-champagne-200 mt-0.5">Ranebennuru, Karnataka</p>
+                                <div class="flex items-center gap-1.5 mt-1.5">
+                                    <span class="text-amber-300 font-semibold text-xs">5.0</span>
+                                    <div class="flex text-amber-400 text-[11px] gap-0.5">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="text-[12px] text-champagne-200">(314 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="py-4 space-y-3.5">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-wand-magic-sparkles text-rosegold-light mt-1 text-xs"></i>
+                                <div>
+                                    <span class="typo-small-label text-rosegold-light block">Specialties</span>
+                                    <span class="text-champagne-100 text-[14px] leading-relaxed block mt-0.5">Expert Bridal Styling, HD & Airbrush Makeup, Advanced Hair Treatments & Saree Draping</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-map-pin text-rosegold-light mt-1 text-xs"></i>
+                                <div>
+                                    <span class="typo-small-label text-rosegold-light block">Salon Location</span>
+                                    <span class="text-champagne-100 text-[14px] leading-relaxed block mt-0.5">Mg market, above Naveen footwear, Doddapet, Ranebennur, Karnataka 581115</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/15">
+                            <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Makeup%20World!%20I%20would%20like%20to%20inquire%20about%20bridal%20makeup%20and%20salon%20services." target="_blank" rel="noopener noreferrer" class="typo-booking-btn w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 transition shadow-lg">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                                <span>WhatsApp (+91 XXXXXXXXXX)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Brand Highlights Section -->
+    <section id="about" class="py-16 sm:py-20 bg-champagne-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Key Metrics Strip -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-14 reveal-item">
+                <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-luxury border border-champagne-200 text-center luxury-card">
+                    <div class="text-3xl sm:text-4xl font-heading font-bold text-espresso flex items-center justify-center gap-1.5">
+                        <span>5.0</span>
+                        <i class="fa-solid fa-star text-amber-400 text-xl"></i>
+                    </div>
+                    <p class="typo-small-label text-espresso-muted mt-1.5">Google Rating</p>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-luxury border border-champagne-200 text-center luxury-card">
+                    <div class="text-3xl sm:text-4xl font-heading font-bold text-rosegold-dark">314</div>
+                    <p class="typo-small-label text-espresso-muted mt-1.5">Verified Google Reviews</p>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-luxury border border-champagne-200 text-center luxury-card">
+                    <div class="text-3xl sm:text-4xl font-heading font-bold text-espresso">100%</div>
+                    <p class="typo-small-label text-espresso-muted mt-1.5">Luxury International Brands</p>
+                </div>
+                <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-luxury border border-champagne-200 text-center luxury-card">
+                    <div class="text-3xl sm:text-4xl font-heading font-bold text-rosegold-dark">8:30 pm</div>
+                    <p class="typo-small-label text-espresso-muted mt-1.5">Open Daily in Doddapet</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- Animated Image Collage Grid -->
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-5 reveal-item">
+                    <div class="space-y-4 sm:space-y-5">
+                        <div class="luxury-img-wrap rounded-2xl shadow-luxury h-52 sm:h-64 border border-champagne-200">
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" alt="Makeup World Salon Interior" class="w-full h-full object-cover">
+                        </div>
+                        <div class="bg-espresso text-champagne-100 p-5 rounded-2xl shadow-luxury">
+                            <p class="font-heading italic text-xl sm:text-2xl text-rosegold-light leading-snug">“Personalized bridal styling and healthy, radiant hair care.”</p>
+                            <p class="typo-small-label text-champagne-300 mt-2">— Makeup World Studio</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 sm:space-y-5 pt-6 sm:pt-8">
+                        <div class="bg-champagne-200/70 p-5 rounded-2xl border border-champagne-300">
+                            <span class="typo-small-label text-rosegold-dark">Prime Landmark</span>
+                            <p class="font-heading font-semibold text-2xl text-espresso mt-1">Doddapet, Ranebennur</p>
+                            <p class="text-[13px] text-espresso-muted mt-1">Mg market, above Naveen footwear</p>
+                        </div>
+                        <div class="luxury-img-wrap rounded-2xl shadow-luxury h-56 sm:h-64 border border-champagne-200">
+                            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80" alt="Advanced Hair Treatment" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clean Description Content -->
+                <div class="lg:col-span-6 space-y-5 reveal-item" style="transition-delay: 120ms;">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-champagne-200 text-rosegold-dark typo-small-label">
+                        <i class="fa-solid fa-sparkles"></i> About Makeup World
+                    </div>
+                    <h2 class="typo-section-heading font-semibold text-espresso">
+                        Expert Bridal Styling & Advanced Hair Treatments
+                    </h2>
+                    <p class="typo-body text-espresso-muted">
+                        Located at <strong>Mg market, above Naveen footwear, Doddapet, Ranebennur, Karnataka 581115</strong>, <strong>Makeup World</strong> is a premier beauty parlour celebrated with a <strong>5.0-star rating across 314 Google reviews</strong>.
+                    </p>
+                    <p class="typo-body text-espresso-muted">
+                        From waterproof HD and Airbrush bridal makeovers to Keratin, Nanoplastia, permanent hair smoothening, and Hydra-glow facials, our studio pairs modern artistry with skin-safe international products.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-champagne-200 shadow-sm luxury-card">
+                            <div class="w-10 h-10 rounded-xl bg-champagne-100 text-rosegold-dark flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-2xl font-semibold text-espresso">Bridal Styling</h3>
+                                <p class="text-[14px] text-espresso-muted leading-relaxed mt-0.5">Traditional Muhurtham, Reception, & Engagement looks.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-champagne-200 shadow-sm luxury-card">
+                            <div class="w-10 h-10 rounded-xl bg-champagne-100 text-rosegold-dark flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-pump-soap text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-2xl font-semibold text-espresso">Hair Treatments</h3>
+                                <p class="text-[14px] text-espresso-muted leading-relaxed mt-0.5">Keratin, Nanoplastia, Botoplex & deep nourishing spa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 reveal-item">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-champagne-100 text-rosegold-dark typo-small-label">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Signature Salon Menu
+                </span>
+                <h2 class="typo-section-heading font-semibold text-espresso">
+                    Professional Bridal & Beauty Services
+                </h2>
+                <p class="typo-body text-espresso-muted">
+                    Explore our bespoke bridal styling packages, restorative hair smoothing therapies, and radiant skin treatments.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex sm:flex-wrap items-center justify-start sm:justify-center gap-2.5 mt-8 overflow-x-auto no-scrollbar pb-2 px-1 reveal-item" id="serviceTabs">
+                <button onclick="filterServices('all')" data-tab="all" class="service-tab active typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full transition gold-btn-gradient text-white shadow-sm">
+                    All Services
+                </button>
+                <button onclick="filterServices('bridal')" data-tab="bridal" class="service-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full transition bg-champagne-100 text-espresso hover:bg-champagne-200">
+                    Bridal Styling
+                </button>
+                <button onclick="filterServices('hair')" data-tab="hair" class="service-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full transition bg-champagne-100 text-espresso hover:bg-champagne-200">
+                    Hair Treatments
+                </button>
+                <button onclick="filterServices('skin')" data-tab="skin" class="service-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full transition bg-champagne-100 text-espresso hover:bg-champagne-200">
+                    Skin & Facial
+                </button>
+                <button onclick="filterServices('draping')" data-tab="draping" class="service-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full transition bg-champagne-100 text-espresso hover:bg-champagne-200">
+                    Party Makeup
+                </button>
+            </div>
+
+            <!-- Services Grid (Populated via JS) -->
+            <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-10">
+                <!-- Populated dynamically by script -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Gallery Section -->
+    <section id="gallery" class="py-16 sm:py-20 bg-champagne-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 reveal-item">
+                <div class="space-y-2.5">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-rosegold-dark typo-small-label shadow-sm">
+                        <i class="fa-solid fa-camera"></i> Portfolio Lookbook
+                    </span>
+                    <h2 class="typo-section-heading font-semibold text-espresso">
+                        Bridal & Hair Transformations
+                    </h2>
+                </div>
+
+                <!-- Gallery Filter Buttons -->
+                <div class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-1" id="galleryTabs">
+                    <button onclick="filterGallery('all')" data-gtab="all" class="gallery-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full gold-btn-gradient text-white shadow-sm">
+                        All Looks
+                    </button>
+                    <button onclick="filterGallery('bridal')" data-gtab="bridal" class="gallery-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-white text-espresso hover:bg-champagne-200 transition">
+                        Bridal Styling
+                    </button>
+                    <button onclick="filterGallery('hair')" data-gtab="hair" class="gallery-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-white text-espresso hover:bg-champagne-200 transition">
+                        Hair Treatments
+                    </button>
+                    <button onclick="filterGallery('salon')" data-gtab="salon" class="gallery-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-white text-espresso hover:bg-champagne-200 transition">
+                        Salon & Glam
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+                <!-- Populated dynamically by script -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-16 sm:py-20 bg-espresso text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Google Rating Summary Banner -->
+            <div class="glass-card rounded-3xl p-6 sm:p-9 mb-12 border border-champagne-300/20 reveal-item">
+                <div class="grid lg:grid-cols-12 gap-6 items-center">
+                    <div class="lg:col-span-8 space-y-3">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-400/20 text-amber-300 typo-small-label">
+                            <i class="fa-brands fa-google"></i> Verified Google Reviews
+                        </div>
+                        <h2 class="typo-section-heading font-semibold text-white">
+                            Rated <span class="text-amber-300 italic">5.0 ★</span> Across 314 Google Reviews
+                        </h2>
+                        <p class="typo-body text-champagne-200 max-w-2xl">
+                            Brides and clients across Ranebennuru trust Makeup World for long-lasting bridal makeup, smooth hair transformations, and welcoming service.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-between gap-4 bg-white/5 p-5 sm:p-6 rounded-2xl border border-white/10">
+                        <div class="text-center sm:text-left">
+                            <div class="text-4xl font-heading font-bold text-white">5.0 / 5.0</div>
+                            <div class="flex items-center justify-center sm:justify-start text-amber-400 text-xs my-1.5 gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="typo-small-label text-champagne-300">314 Google reviews</p>
+                        </div>
+                        <a href="#location" class="typo-booking-btn w-full sm:w-auto gold-btn-gradient text-white px-5 py-3 rounded-xl shadow-glow hover:opacity-95 transition text-center shrink-0">
+                            Visit Salon
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-item">
+                <!-- Review Card 1 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-5 luxury-card">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex text-amber-400 text-xs gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="typo-small-label text-champagne-300 flex items-center gap-1"><i class="fa-brands fa-google text-amber-300"></i> 5.0 ★</span>
+                        </div>
+                        <p class="typo-body text-champagne-100">
+                            “Booked Makeup World for my Muhurtham and Reception look in Ranebennur. The HD makeup stayed fresh for over 12 hours, and the saree draping and floral hairstyling were spotless.”
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-rosegold flex items-center justify-center font-heading font-bold text-lg text-white">A</div>
+                        <div>
+                            <h3 class="font-heading text-xl font-semibold text-white">Aishwarya Patil</h3>
+                            <p class="typo-small-label text-champagne-300">Bridal Makeup & Styling</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-5 luxury-card">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex text-amber-400 text-xs gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="typo-small-label text-champagne-300 flex items-center gap-1"><i class="fa-brands fa-google text-amber-300"></i> 5.0 ★</span>
+                        </div>
+                        <p class="typo-body text-champagne-100">
+                            “Best beauty parlour in Ranebennuru! Got my Keratin and Hair Smoothening treatment done here. My frizzy hair is now super smooth, shiny, and easy to manage.”
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center font-heading font-bold text-lg text-white">S</div>
+                        <div>
+                            <h3 class="font-heading text-xl font-semibold text-white">Sneha Kulkarni</h3>
+                            <p class="typo-small-label text-champagne-300">Keratin Hair Treatment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-5 luxury-card">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex text-amber-400 text-xs gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="typo-small-label text-champagne-300 flex items-center gap-1"><i class="fa-brands fa-google text-amber-300"></i> 5.0 ★</span>
+                        </div>
+                        <p class="typo-body text-champagne-100">
+                            “Truly deserves the 5.0 rating. Polite staff and very hygienic studio at MG Market. They matched my skin tone naturally for my engagement without heavy makeup.”
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-emerald-700 flex items-center justify-center font-heading font-bold text-lg text-white">P</div>
+                        <div>
+                            <h3 class="font-heading text-xl font-semibold text-white">Pooja Hiremath</h3>
+                            <p class="typo-small-label text-champagne-300">Engagement Makeover & Facial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location, Map & Contact Section -->
+    <section id="location" class="py-16 sm:py-20 bg-champagne-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-12 reveal-item">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-champagne-200 text-rosegold-dark typo-small-label">
+                    <i class="fa-solid fa-location-dot"></i> Directions & Appointments
+                </span>
+                <h2 class="typo-section-heading font-semibold text-espresso">
+                    Visit Makeup World in Doddapet, Ranebennur
+                </h2>
+                <p class="typo-body text-espresso-muted">
+                    Located at Mg market, above Naveen footwear, Doddapet, Ranebennur, Karnataka 581115. Walk in before 8:30 pm or book your slot online below.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Left Column: Salon Contact Details & Reliable Google Map Embed -->
+                <div class="lg:col-span-6 space-y-6 reveal-item">
+                    <!-- Contact Details Card -->
+                    <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-luxury border border-champagne-200 space-y-5">
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-champagne-200 pb-4">
+                            <div>
+                                <h3 class="font-heading text-2xl sm:text-3xl font-semibold text-espresso">Makeup World</h3>
+                                <p class="typo-small-label text-espresso-muted mt-0.5">Beauty parlour in Ranebennuru • 5.0 ★ (314)</p>
+                            </div>
+                            <span class="typo-small-label px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                Open · Closes 8:30 pm
+                            </span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-champagne-100 text-rosegold-dark flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-map-location-dot text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="typo-small-label text-espresso-muted block">Address</span>
+                                    <p class="typo-body text-espresso font-medium mt-0.5">
+                                        Mg market, above Naveen footwear, Doddapet, Ranebennur, Karnataka 581115
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-champagne-100 text-rosegold-dark flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-phone-volume text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="typo-small-label text-espresso-muted block">Phone Number</span>
+                                    <a href="tel:91XXXXXXXXXX" class="typo-body text-espresso font-semibold hover:text-rosegold-dark transition block mt-0.5">
+                                        +91 XXXXXXXXXX
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-champagne-100 text-rosegold-dark flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-regular fa-clock text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="typo-small-label text-espresso-muted block">Hours</span>
+                                    <p class="typo-body text-espresso font-medium mt-0.5">Open · Closes 8:30 pm</p>
+                                    <p class="text-[13px] text-espresso-muted">Early morning bridal Muhurtham slots available on prior booking.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-3 pt-2">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Makeup+World+MG+Market+above+Naveen+footwear+Doddapet+Ranebennur+Karnataka+581115" target="_blank" rel="noopener noreferrer" class="typo-booking-btn gold-btn-gradient text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-glow hover:opacity-95 transition">
+                                <i class="fa-solid fa-diamond-turn-right"></i>
+                                <span>Open in Google Maps</span>
+                            </a>
+                            <a href="tel:91XXXXXXXXXX" class="typo-booking-btn bg-espresso text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-espresso-light transition">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Call +91 XXXXXXXXXX</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Fixed Keyless Interactive Google Map with Interactive Overlay Badge & Direct Button -->
+                    <div class="bg-white p-3 rounded-3xl shadow-luxury border border-champagne-200 overflow-hidden">
+                        <div class="rounded-2xl overflow-hidden h-72 sm:h-80 w-full relative group">
+                            <iframe 
+                                title="Makeup World MG Market Doddapet Ranebennur Map"
+                                src="https://maps.google.com/maps?q=Makeup+World+MG+Market+Doddapet+Ranebennur+Karnataka+581115&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                class="w-full h-full border-0"
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+
+                            <!-- Interactive Overlay Badge & Instant Turn-by-Turn Navigation Button -->
+                            <div class="absolute bottom-3 left-3 right-3 sm:right-auto bg-espresso/90 backdrop-blur-md text-white p-3.5 rounded-2xl border border-white/15 shadow-xl flex items-center justify-between gap-4 max-w-md">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-xl gold-btn-gradient flex items-center justify-center text-white shrink-0">
+                                        <i class="fa-solid fa-location-dot text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <span class="typo-small-label text-amber-300 block">Makeup World • 5.0 ★</span>
+                                        <p class="text-[12.5px] font-medium text-champagne-100 leading-tight mt-0.5">MG Market, above Naveen footwear, Doddapet</p>
+                                    </div>
+                                </div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Makeup+World+MG+Market+above+Naveen+footwear+Doddapet+Ranebennur+Karnataka+581115" target="_blank" rel="noopener noreferrer" class="typo-small-label gold-btn-gradient text-white px-3.5 py-2 rounded-xl shrink-0 hover:scale-105 transition flex items-center gap-1.5 shadow-sm">
+                                    <span>Navigate</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Appointment & WhatsApp Booking Form -->
+                <div class="lg:col-span-6 reveal-item" style="transition-delay: 140ms;">
+                    <div class="bg-white rounded-3xl p-6 sm:p-9 shadow-luxury border border-champagne-200">
+                        <span class="typo-small-label text-rosegold-dark">Online Booking</span>
+                        <h3 class="font-heading text-3xl sm:text-4xl font-semibold text-espresso mt-1">
+                            Request an Appointment
+                        </h3>
+                        <p class="typo-body text-espresso-muted mt-1.5 mb-6">
+                            Choose your service and preferred date to confirm via WhatsApp or request a callback from our salon desk.
+                        </p>
+
+                        <form id="appointmentForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="typo-small-label block text-espresso mb-1.5">Your Name *</label>
+                                    <input type="text" id="clientName" required placeholder="e.g., Kavya Rao" class="w-full px-4 py-3 rounded-xl bg-champagne-50 border border-champagne-300 focus:outline-none focus:border-rosegold text-[15px]">
+                                </div>
+                                <div>
+                                    <label class="typo-small-label block text-espresso mb-1.5">Phone Number *</label>
+                                    <input type="tel" id="clientPhone" required placeholder="+91 XXXXXXXXXX" class="w-full px-4 py-3 rounded-xl bg-champagne-50 border border-champagne-300 focus:outline-none focus:border-rosegold text-[15px]">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="typo-small-label block text-espresso mb-1.5">Select Service *</label>
+                                    <select id="clientService" required class="w-full px-4 py-3 rounded-xl bg-champagne-50 border border-champagne-300 focus:outline-none focus:border-rosegold text-[15px]">
+                                        <option value="HD / Airbrush Bridal Makeup">HD / Airbrush Bridal Makeup</option>
+                                        <option value="Keratin / Hair Smoothening Treatment">Keratin / Hair Smoothening Treatment</option>
+                                        <option value="Botoplex / Hair Spa & Coloring">Botoplex / Hair Spa & Coloring</option>
+                                        <option value="Hydra Facial & Bridal Skin Glow">Hydra Facial & Bridal Skin Glow</option>
+                                        <option value="Party / Engagement Makeup">Party / Engagement Makeup</option>
+                                        <option value="Saree Draping & Hairstyling">Saree Draping & Hairstyling</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="typo-small-label block text-espresso mb-1.5">Preferred Date *</label>
+                                    <input type="date" id="clientDate" required class="w-full px-4 py-3 rounded-xl bg-champagne-50 border border-champagne-300 focus:outline-none focus:border-rosegold text-[15px]">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="typo-small-label block text-espresso mb-1.5">Special Notes (Optional)</label>
+                                <textarea id="clientNotes" rows="3" placeholder="Share event details, hair length, or preferred time slot..." class="w-full px-4 py-3 rounded-xl bg-champagne-50 border border-champagne-300 focus:outline-none focus:border-rosegold text-[15px]"></textarea>
+                            </div>
+
+                            <!-- Confirmation Feedback Banner -->
+                            <div id="bookingSuccessBanner" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-sm space-y-1">
+                                <div class="flex items-center gap-2 font-semibold text-emerald-800">
+                                    <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                                    <span>Appointment Request Ready</span>
+                                </div>
+                                <p id="bookingSuccessText"></p>
+                            </div>
+
+                            <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                                <button type="submit" class="typo-booking-btn w-full gold-btn-gradient text-white py-3.5 px-6 rounded-xl shadow-glow hover:opacity-95 transition flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                    <span>Book via WhatsApp</span>
+                                </button>
+                                <button type="button" onclick="saveInstantCallback()" class="typo-booking-btn w-full sm:w-auto px-6 py-3.5 rounded-xl bg-champagne-100 hover:bg-champagne-200 text-espresso transition shrink-0">
+                                    Request Callback
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-espresso text-champagne-200 pt-14 pb-9 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/10">
+                <div class="space-y-3.5">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-9 h-9 rounded-full gold-btn-gradient flex items-center justify-center text-white font-heading font-bold text-base">MW</div>
+                        <span class="font-heading text-2xl font-semibold text-white">Makeup <span class="text-rosegold-light italic">World</span></span>
+                    </div>
+                    <p class="text-[14.5px] text-champagne-300 leading-relaxed">
+                        Professional beauty salon offering expert bridal styling and advanced hair treatments in Ranebennuru, Karnataka.
+                    </p>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 typo-small-label text-amber-300">
+                        <span>5.0 ★</span>
+                        <span class="text-champagne-200">(314 Google reviews)</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-2xl mb-3">Quick Links</h4>
+                    <ul class="space-y-2.5 typo-nav">
+                        <li><a href="#home" class="hover:text-rosegold-light transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-rosegold-light transition">About Salon</a></li>
+                        <li><a href="#services" class="hover:text-rosegold-light transition">Services</a></li>
+                        <li><a href="#gallery" class="hover:text-rosegold-light transition">Gallery</a></li>
+                        <li><a href="#reviews" class="hover:text-rosegold-light transition">Reviews (5.0 ★)</a></li>
+                        <li><a href="#location" class="hover:text-rosegold-light transition">Directions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-2xl mb-3">Our Specialties</h4>
+                    <ul class="space-y-2.5 text-[14px] text-champagne-300">
+                        <li>HD & Airbrush Bridal Makeup</li>
+                        <li>Keratin & Hair Smoothening</li>
+                        <li>Nanoplastia & Hair Botoplex</li>
+                        <li>Hydra & Gold Bridal Facials</li>
+                        <li>Box Folding & Saree Draping</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-2xl mb-3">Salon Address</h4>
+                    <p class="text-[14px] text-champagne-300 leading-relaxed">
+                        Mg market, above Naveen footwear, Doddapet, Ranebennur, Karnataka 581115
+                    </p>
+                    <p class="text-[14.5px] font-semibold text-white mt-3">
+                        <i class="fa-solid fa-phone text-rosegold-light mr-1.5"></i>
+                        <a href="tel:91XXXXXXXXXX" class="hover:text-rosegold-light">+91 XXXXXXXXXX</a>
+                    </p>
+                    <p class="typo-small-label text-emerald-300 mt-2">
+                        <i class="fa-regular fa-clock mr-1"></i> Open · Closes 8:30 pm
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px] text-champagne-400 text-center sm:text-left">
+                <p>© <span id="currentYear"></span> Makeup World, Ranebennuru. All rights reserved.</p>
+                <p>Beauty parlour in Ranebennuru, Karnataka • 5.0 ★ (314 Google reviews)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" aria-label="Close Lightbox" class="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center text-lg transition z-10">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-3xl w-full bg-espresso rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
+            <img id="lightboxImg" src="" alt="Gallery Preview" class="w-full max-h-[65vh] object-cover">
+            <div class="p-5 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <span id="lightboxTag" class="typo-small-label text-rosegold-light"></span>
+                    <h4 id="lightboxTitle" class="font-heading text-2xl sm:text-3xl text-white font-semibold mt-0.5"></h4>
+                </div>
+                <button onclick="bookFromLightbox()" class="typo-booking-btn w-full sm:w-auto gold-btn-gradient text-white px-6 py-3 rounded-full shadow-glow text-center">
+                    Book This Look
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-champagne-200">
+            <button onclick="closeBookingModal()" aria-label="Close Modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-champagne-100 hover:bg-champagne-200 text-espresso flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+            <span class="typo-small-label text-rosegold-dark">Makeup World • +91 XXXXXXXXXX</span>
+            <h3 class="font-heading text-3xl font-semibold text-espresso mt-1">Reserve Your Appointment</h3>
+            <p id="modalServiceLabel" class="text-[13.5px] text-espresso-muted mt-0.5 mb-5"></p>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="typo-small-label block text-espresso mb-1">Your Name *</label>
+                    <input type="text" id="modalName" required placeholder="Enter full name" class="w-full px-4 py-2.5 rounded-xl bg-champagne-50 border border-champagne-300 text-[15px]">
+                </div>
+                <div>
+                    <label class="typo-small-label block text-espresso mb-1">Mobile Number *</label>
+                    <input type="tel" id="modalPhone" required placeholder="+91 XXXXXXXXXX" class="w-full px-4 py-2.5 rounded-xl bg-champagne-50 border border-champagne-300 text-[15px]">
+                </div>
+                <div>
+                    <label class="typo-small-label block text-espresso mb-1">Preferred Date *</label>
+                    <input type="date" id="modalDate" required class="w-full px-4 py-2.5 rounded-xl bg-champagne-50 border border-champagne-300 text-[15px]">
+                </div>
+                <button type="submit" class="typo-booking-btn w-full gold-btn-gradient text-white py-3.5 rounded-xl shadow-glow flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Confirm via WhatsApp</span>
+                </button>
+                <a href="tel:91XXXXXXXXXX" class="block text-center typo-small-label text-espresso-muted hover:text-espresso py-1">
+                    Or Call Directly: +91 XXXXXXXXXX
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Set dynamic year & default date input
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const todayISO = new Date().toISOString().split('T')[0];
+        document.getElementById('clientDate').value = todayISO;
+        document.getElementById('modalDate').value = todayISO;
+
+        // Services Data Catalog
+        const servicesData = [
+            {
+                id: 1,
+                category: 'bridal',
+                badge: 'Bridal Package',
+                title: 'Signature HD & Airbrush Bridal Makeup',
+                duration: '3 - 4 Hours • Waterproof & Long-Wear',
+                description: 'Complete bridal transformation including skin prep, HD/Airbrush base, eye artistry, lashes, jewelry setting, and floral hairstyling.',
+                image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 2,
+                category: 'hair',
+                badge: 'Advanced Hair Care',
+                title: 'Keratin & Permanent Hair Smoothening',
+                duration: '2.5 - 3.5 Hours • Frizz-Free Shine',
+                description: 'Deep keratin protein infusion to eliminate frizz, repair dry cuticles, and leave hair smooth, straight, and manageable.',
+                image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 3,
+                category: 'hair',
+                badge: 'Restorative Therapy',
+                title: 'Nanoplastia, Botoplex & Deep Hair Spa',
+                duration: '90 - 150 Mins • Formaldehyde-Free',
+                description: 'Organic hair reconstruction and nourishing scalp spa for chemically treated or damaged hair with mirror-like gloss.',
+                image: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 4,
+                category: 'skin',
+                badge: 'Bridal Pre-Glow',
+                title: 'Hydra Facial & 24K Gold Bridal Glow',
+                duration: '75 Mins • Instant Radiance',
+                description: 'Multi-step cleansing, gentle exfoliation, antioxidant serum infusion, and illuminating masks for glass-like bridal skin.',
+                image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 5,
+                category: 'draping',
+                badge: 'Event Glam',
+                title: 'Engagement & Party Glam Makeover',
+                duration: '90 Mins • Soft / Dewy Glam',
+                description: 'Dewy makeup and modern hairstyling tailored for engagements, receptions, baby showers, and family celebrations.',
+                image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 6,
+                category: 'draping',
+                badge: 'Traditional Styling',
+                title: 'Box Saree Pre-Pleating & Bridal Draping',
+                duration: '45 - 60 Mins • Crisp Pleats',
+                description: 'Silk saree box-folding, pre-pleating, and traditional or modern saree draping with floral braid styling.',
+                image: 'https://images.unsplash.com/photo-1522337094846-8a818192de1f?auto=format&fit=crop&w=800&q=80'
+            }
+        ];
+
+        // Gallery Items Data
+        const galleryData = [
+            {
+                category: 'bridal',
+                tag: 'Bridal Styling',
+                title: 'South Indian Muhurtham Bridal Look',
+                image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80'
+            },
+            {
+                category: 'hair',
+                tag: 'Hair Treatments',
+                title: 'Keratin & Smooth Hair Finish',
+                image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80'
+            },
+            {
+                category: 'bridal',
+                tag: 'Bridal Styling',
+                title: 'Reception Airbrush Dewy Makeover',
+                image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80'
+            },
+            {
+                category: 'salon',
+                tag: 'Salon & Glam',
+                title: 'Makeup World Studio Interior',
+                image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80'
+            },
+            {
+                category: 'hair',
+                tag: 'Hair Treatments',
+                title: 'Global Hair Color & Balayage',
+                image: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=80'
+            },
+            {
+                category: 'salon',
+                tag: 'Salon & Glam',
+                title: 'Hydra-Glow Skin Preparation',
+                image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80'
+            },
+            {
+                category: 'bridal',
+                tag: 'Bridal Styling',
+                title: 'Floral Bridal Updo & Braid',
+                image: 'https://images.unsplash.com/photo-1522337094846-8a818192de1f?auto=format&fit=crop&w=900&q=80'
+            },
+            {
+                category: 'hair',
+                tag: 'Hair Treatments',
+                title: 'Botoplex Repair & Smooth Blowout',
+                image: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80'
+            }
+        ];
+
+        // Render Services with Multi-Layered Image Hover Animations & Exact Typography
+        function renderServices(filter = 'all') {
+            const grid = document.getElementById('servicesGrid');
+            const filtered = filter === 'all' ? servicesData : servicesData.filter(s => s.category === filter);
+            
+            grid.innerHTML = filtered.map((service, idx) => `
+                <div style="animation-delay: ${idx * 70}ms" class="tab-animate-in luxury-card bg-champagne-50 rounded-3xl overflow-hidden border border-champagne-200 shadow-luxury flex flex-col justify-between group">
+                    <div>
+                        <div class="luxury-img-wrap h-56">
+                            <img src="${service.image}" alt="${service.title}" class="w-full h-full object-cover">
+                            <div class="floating-badge absolute top-3.5 left-3.5 bg-espresso/85 backdrop-blur-md text-champagne-100 typo-small-label px-3.5 py-1.5 rounded-full z-10">
+                                ${service.badge}
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-2.5">
+                            <div class="typo-small-label text-rosegold-dark flex items-center gap-1.5">
+                                <i class="fa-regular fa-clock"></i>
+                                <span>${service.duration}</span>
+                            </div>
+                            <h3 class="font-heading text-2xl sm:text-[26px] font-semibold text-espresso leading-snug">${service.title}</h3>
+                            <p class="typo-body text-espresso-muted">${service.description}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-1">
+                        <button onclick="openBookingModal('${service.title}')" class="typo-booking-btn w-full gold-btn-gradient text-white py-3 px-4 rounded-xl shadow-sm hover:opacity-95 transition flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span>Book Service</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterServices(category) {
+            document.querySelectorAll('.service-tab').forEach(btn => {
+                if (btn.dataset.tab === category) {
+                    btn.className = 'service-tab active typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full transition gold-btn-gradient text-white shadow-sm';
+                } else {
+                    btn.className = 'service-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full transition bg-champagne-100 text-espresso hover:bg-champagne-200';
+                }
+            });
+            renderServices(category);
+        }
+
+        // Render Gallery with Shimmer Sweep & Staggered Entrance Animation
+        function renderGallery(filter = 'all') {
+            const grid = document.getElementById('galleryGrid');
+            const filtered = filter === 'all' ? galleryData : galleryData.filter(g => g.category === filter);
+
+            grid.innerHTML = filtered.map((item, idx) => `
+                <div style="animation-delay: ${idx * 65}ms" onclick="openLightbox('${item.image}', '${item.tag}', '${item.title}')" class="tab-animate-in luxury-card luxury-img-wrap gallery-item relative h-72 rounded-3xl overflow-hidden cursor-pointer shadow-luxury border border-champagne-200 group">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                    <div class="floating-badge absolute top-3.5 left-3.5 bg-espresso/80 backdrop-blur-md text-champagne-100 typo-small-label px-3 py-1 rounded-full z-10">
+                        ${item.tag}
+                    </div>
+                    <div class="gallery-overlay opacity-100 sm:opacity-0 transition duration-300 absolute inset-0 bg-gradient-to-t from-espresso/95 via-espresso/35 to-transparent flex flex-col justify-end p-5 z-10">
+                        <span class="typo-small-label text-rosegold-light">${item.tag}</span>
+                        <h4 class="font-heading text-white font-semibold text-2xl leading-snug mt-0.5">${item.title}</h4>
+                        <span class="typo-small-label text-champagne-200 mt-2 inline-flex items-center gap-1.5">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> View Full Look
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterGallery(category) {
+            document.querySelectorAll('.gallery-tab').forEach(btn => {
+                if (btn.dataset.gtab === category) {
+                    btn.className = 'gallery-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full gold-btn-gradient text-white shadow-sm';
+                } else {
+                    btn.className = 'gallery-tab typo-nav shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-white text-espresso hover:bg-champagne-200 transition';
+                }
+            });
+            renderGallery(category);
+        }
+
+        // Lightbox Controls
+        let currentLightboxLook = '';
+        function openLightbox(img, tag, title) {
+            currentLightboxLook = title;
+            document.getElementById('lightboxImg').src = img;
+            document.getElementById('lightboxTag').textContent = tag;
+            document.getElementById('lightboxTitle').textContent = title;
+            document.getElementById('lightboxModal').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+        }
+
+        function bookFromLightbox() {
+            closeLightbox();
+            openBookingModal(currentLightboxLook);
+        }
+
+        // Booking Modal Controls
+        let selectedModalService = 'Bridal & Salon Consultation';
+        function openBookingModal(serviceName) {
+            selectedModalService = serviceName;
+            document.getElementById('modalServiceLabel').textContent = `Selected Service: ${serviceName}`;
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('modalName').value.trim();
+            const phone = document.getElementById('modalPhone').value.trim();
+            const date = document.getElementById('modalDate').value;
+            const msg = encodeURIComponent(`Hello Makeup World (Ranebennur)! I would like to book an appointment.\n\n• Name: ${name}\n• Phone: ${phone}\n• Service: ${selectedModalService}\n• Preferred Date: ${date}`);
+            window.open(`https://wa.me/91XXXXXXXXXX?text=${msg}`, '_blank');
+            closeBookingModal();
+        }
+
+        // Main Contact Form Submit
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('clientName').value.trim();
+            const phone = document.getElementById('clientPhone').value.trim();
+            const service = document.getElementById('clientService').value;
+            const date = document.getElementById('clientDate').value;
+            const notes = document.getElementById('clientNotes').value.trim();
+
+            const banner = document.getElementById('bookingSuccessBanner');
+            const bannerText = document.getElementById('bookingSuccessText');
+            bannerText.textContent = `Thank you, ${name}! Redirecting you to WhatsApp (+91 XXXXXXXXXX) to confirm your ${service} slot on ${date}.`;
+            banner.classList.remove('hidden');
+
+            const waText = encodeURIComponent(
+                `Hello Makeup World! I would like to book an appointment:\n\n` +
+                `• Name: ${name}\n` +
+                `• Phone: ${phone}\n` +
+                `• Service: ${service}\n` +
+                `• Date: ${date}\n` +
+                (notes ? `• Notes: ${notes}` : '')
+            );
+            window.open(`https://wa.me/91XXXXXXXXXX?text=${waText}`, '_blank');
+        }
+
+        function saveInstantCallback() {
+            const name = document.getElementById('clientName').value.trim() || 'Valued Guest';
+            const service = document.getElementById('clientService').value;
+            const banner = document.getElementById('bookingSuccessBanner');
+            const bannerText = document.getElementById('bookingSuccessText');
+            bannerText.textContent = `Hi ${name}, we have noted your interest in "${service}". For immediate confirmation, please call our Doddapet studio desk at +91 XXXXXXXXXX (Open till 8:30 pm).`;
+            banner.classList.remove('hidden');
+        }
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // IntersectionObserver for Scroll-Triggered Reveal Animations
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
+        }
+
+        // Initialize Grids & Scroll Animations on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderServices('all');
+            renderGallery('all');
+            initScrollReveal();
+        });
+    </script>
+</body>
+</html>
